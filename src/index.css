@@ -12,12 +12,22 @@ a {
   text-decoration: none;
   color: black;
 }
+body {
+  background-color: rgb(237, 243, 245);
+}
 img {
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
   border: 5px solid goldenrod;
   aspect-ratio: 2/1;
+}
+.item-header {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+.price {
+  color: gold;
 }
 .section-center {
   width: 90%;
@@ -31,6 +41,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid pink;
+  padding-bottom: 0.2rem;
 }
 @media screen and (min-width: 1000px) {
   .section-center {
@@ -42,5 +54,16 @@ img {
   .section-center > * {
     flex: 0 1 45%;
     margin-bottom: 2rem;
+  }
+  .menu-item {
+    display: flex;
+
+    justify-content: space-between;
+  }
+  .menu-item > * {
+    flex: 0 1 48%;
+  }
+  .item-text {
+    margin-top: 1rem;
   }
 }
