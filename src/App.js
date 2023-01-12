@@ -5,7 +5,27 @@ import Menu from "./Menu";
 import data from "./data";
 function App() {
   const [menu, setMenu] = useState(data);
-  console.log(menu);
+  const [category, setCategory] = useState([
+    "all",
+    ...new Set(data.map((elem) => elem.category)),
+  ]);
+  const filterItems = (itemName) => {
+    switch (itemName) {
+      case "breakfast":
+        setMenu(data.filter((item) => item.category === itemName));
+        break;
+      case "lunch":
+        setMenu(data.filter((item) => item.category === itemName));
+        break;
+      case "shakes":
+        setMenu(data.filter((item) => item.category === itemName));
+        break;
+      case "all":
+        setMenu(data);
+        break;
+    }
+  };
+  console.log(category);
   return (
     <main>
       <section className="menu section">
@@ -13,7 +33,7 @@ function App() {
           <h2>our menu</h2>
           <div className="underline"></div>
         </div>
-        <Categories />
+        <Categories category={category} filter={filterItems} />
         <Menu items={menu} />
       </section>
     </main>
